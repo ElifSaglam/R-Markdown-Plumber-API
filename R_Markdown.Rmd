@@ -1,0 +1,106 @@
+---
+title: "R-Markdown"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    highlight: tango
+    theme: "flatly"
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+    keep_tex: true
+  word_document:
+    toc: yes
+  css: style.css
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+
+## Markdown Nedir ?
+
+> R Markdown notlar,kodlar,formüller,grafikler ve resimler ile birlikte çalışma imkanı sağlayan, **.Rmd** uzantılı, 
+bir R kütüphanesidir. **R Markdown,** herhangi bir HTML veya LaTeX kodunu bilmek zorunda kalmadan veya 
+zor biçimlendirme sorunlarıyla uğraşmak zorunda kalmadan, biçimlendirilmiş bir HTML, PDF veya Word 
+dosyası oluşturmak için R kodunun markdown metni ile birlikte çalışmasını sağlar.
+
+> Rmarkdown’da hem bilgisayar kodu hem de anlatılar aynı belgede olduğundan ve sonuçlar otomatik 
+olarak kaynak koddan üretildiğinden, yeniden üretilebilirlik için tasarlanmıştır. R Markdown birçok 
+statik ve dinamik/etkileşimli çıktı formatını destekler.(Word,html,pdf,books,dashboard,shiny,scientific 
+articles vs.)
+
+R Markdown tanıtımına [buradan](https://rmarkdown.rstudio.com) erişebilirsiniz.
+
+R Markdown belgesinin üç temel bileşeni vardır:
+
+* meta veriler
+
+* metin 
+
+* kod (chunk)
+
+> R Markdown raporunda gördüğünüz ilk birkaç satır YAML olarak bilinir. Üç çizgi çifti arasında yer alan YAML 
+(YAML, insan tarafından okunabilen bir veri serileştirme dilidir) sözdizimi Meta veriyi ifade eder. Bu satırlar, 
+nihai raporun başında genel bir başlık üretecektir.
+
+### Markdown Nasıl Çalışır ?
+
+<img src="C:/Users/esaglam/Desktop/Markdown_Plumber/images/nasil_calisir.png" alt="drawing" style="width:400px;"/> 
+<!-- ya da ![Resim I](C:/Users/esaglam/Desktop/Markdown_Plumber/images/nasil_calisir.png--> 
+
+> R Markdown ile belge oluşturmak, markdown ve R kodu parçalarının bir kombinasyonunu içeren bir **.Rmd** dosyası ile başlar. **Knitr** tüm R kodu parçalarını çalıştıran ve çıktı ile yeni bir etiketleme (.md) belgesi oluşturan .Rmd dosyasını besler.
+
+> Knitr tarafından oluşturulan etiketleme dosyası daha sonra bitmiş bir web sayfası, **PDF,** **MS Word** belgesi, **slayt** gösterisi, çalışma kağıdı, kitap, gösterge paneli, paket skeç veya başka bir format oluşturmaktan sorumlu olan pandoc tarafından işlenir ve bitmiş bir  rapor oluşturulabilir.
+
+Çıktı Formatları;
+
+<img src="C:/Users/esaglam/Desktop/Markdown_Plumber/images/cikti_formatlari.png" alt="drawing" style="width:200px;"/> 
+
+### Çalışma Ortamı Ayarlama
+
+>Bir R Markdown dosyası oluşturmak için   **File > New File > R Markdown**  öğesini seçebilir veya RStudio penceresinin sol üst köşesinde yeni bir belge oluşturmak için kısayolu seçebilirsiniz. Size bir HTML, PDF veya Word belgesi oluşturma seçeneği sunulacak; ancak, R Markdown belgenizi oluşturduktan sonra bu seçenekler arasında sorunsuz bir şekilde geçiş yapmanıza izin verir.
+
+### Chunk İşlemi
+
+>R çıktısını belgelere dönüştürmek ya da sadece gösterim amacıyla kodu görüntülemek için bir araç olarak kullanılabilir. R studio çalışma sayfasının sağ üst kısmında yer alan  <img src="C:/Users/esaglam/Desktop/Markdown_Plumber/images/sekme.png" alt="drawing" style="width:25px;"/> sekmesinden veya **Ctrl + Alt +I** (windows) kısayolu ile chunk eklenir.
+
+Chunk çıkışı birçok knitr seçeneğiyle özelleştirilebilir. Başlıca kullanılan özelleştirme fonksiyonları;
+
+*	**echo=FALSE** kodu gizler sonuçları gösterir.    
+
+*	**eval=FALSE**  kodu gösterir ancak değerlendirmez.
+
+*	**results='hide'** sonuçları gizler fakat kodu gösterir.
+
+*	**include=FALSE** kodu değerlendirir ancak kod veya çıktı göstermez.
+
+*	**warning=FALSE** ve **message=FALSE** paketleri yüklerken üretilen mesajları kaldırmak için kullanışlıdır.
+
+
+Chunk çıktısı için kullanılabilecek diğer fonksiyonlara [Markdown dokümanından](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) erişebilirsiniz. erişebilirsiniz. 
+
+
+**İlgili linkler;**
+
+[https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+[https://rmarkdown.rstudio.com/articles_intro.html](https://rmarkdown.rstudio.com/articles_intro.html)
+
+[https://rmarkdown.rstudio.com](https://rmarkdown.rstudio.com) 
+
+
+
+
+
+
+
+
