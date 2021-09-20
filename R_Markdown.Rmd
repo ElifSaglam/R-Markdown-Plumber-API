@@ -54,8 +54,8 @@ nihai raporun başında genel bir başlık üretecektir.
 
 ### Markdown Nasıl Çalışır ?
 
-<img src="C:/Users/esaglam/Desktop/Markdown_Plumber/images/nasil_calisir.png" alt="drawing" style="width:400px;"/> 
-<!-- ya da ![Resim I](C:/Users/esaglam/Desktop/Markdown_Plumber/images/nasil_calisir.png--> 
+<img src="C:/..../images/nasil_calisir.png" alt="drawing" style="width:400px;"/> 
+<!-- ya da ![Resim I](C:/..../images/nasil_calisir.png--> 
 
 > R Markdown ile belge oluşturmak, markdown ve R kodu parçalarının bir kombinasyonunu içeren bir **.Rmd** dosyası ile başlar. **Knitr** tüm R kodu parçalarını çalıştıran ve çıktı ile yeni bir etiketleme (.md) belgesi oluşturan .Rmd dosyasını besler.
 
@@ -63,7 +63,7 @@ nihai raporun başında genel bir başlık üretecektir.
 
 Çıktı Formatları;
 
-<img src="C:/Users/esaglam/Desktop/Markdown_Plumber/images/cikti_formatlari.png" alt="drawing" style="width:200px;"/> 
+<img src="C:/..../images/cikti_formatlari.png" alt="drawing" style="width:200px;"/> 
 
 ### Çalışma Ortamı Ayarlama
 
@@ -71,7 +71,7 @@ nihai raporun başında genel bir başlık üretecektir.
 
 ### Chunk İşlemi
 
->R çıktısını belgelere dönüştürmek ya da sadece gösterim amacıyla kodu görüntülemek için bir araç olarak kullanılabilir. R studio çalışma sayfasının sağ üst kısmında yer alan  <img src="C:/Users/esaglam/Desktop/Markdown_Plumber/images/sekme.png" alt="drawing" style="width:25px;"/> sekmesinden veya **Ctrl + Alt +I** (windows) kısayolu ile chunk eklenir.
+>R çıktısını belgelere dönüştürmek ya da sadece gösterim amacıyla kodu görüntülemek için bir araç olarak kullanılabilir. R studio çalışma sayfasının sağ üst kısmında yer alan  <img src="C:/..../images/sekme.png" alt="drawing" style="width:25px;"/> sekmesinden veya **Ctrl + Alt +I** (windows) kısayolu ile chunk eklenir.
 
 Chunk çıkışı birçok knitr seçeneğiyle özelleştirilebilir. Başlıca kullanılan özelleştirme fonksiyonları;
 
