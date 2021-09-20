@@ -35,7 +35,7 @@ Kullanılan veri setine [buradan](https://www.kaggle.com/START-UMD/gtd) ulaşabi
 
 ```{r  message=FALSE, warning=FALSE,echo=FALSE}
 
-globalterorism <- read.csv("C:/Users/elifs/OneDrive/Masaüstü/WORK/GitHub-Çalışmalarım/Markdown_Plumber/globalterrorismdb.csv")
+globalterorism <- read.csv("C:/...../globalterrorismdb.csv")
 
 ### Turkey Data ####
 turkey_data <- globalterorism %>% filter(country_txt == "Turkey")
