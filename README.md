@@ -1,6 +1,8 @@
 ### Markdown-Plumber
 
-R_Markdown.Rmd dosyasında hazırlanan metin içerikli raporun api'sini çalıştırmak ve test etmek için gereken adımlar aşağıda yer almaktadır. Hazırlanlanan herhangi bir Markdown raporu için yazılan api'ler bu adımlar ile test edilebilir. Markdown dosyası içerisinde html,css,js komutları kullanarak metinsel raporlar, modelleme ve görselleştirme içeren interaktif raporlar oluşturabilir ve api aracılığı ile diğer platformlara kolaylıkla entegre edebilirsiniz. 
+R_Markdown.Rmd dosyasında hazırlanan metin içerikli raporun api'sini çalıştırmak ve test etmek için gereken adımlar aşağıda yer almaktadır.
+
+Hazırlanlanan herhangi bir Markdown raporu için yazılan api'ler bu adımlar ile test edilebilir. Markdown dosyası içerisinde html,css,js komutları kullanarak metinsel raporlar, modelleme ve görselleştirme içeren interaktif raporlar oluşturabilir ve api aracılığı ile diğer platformlara kolaylıkla entegre edebilirsiniz. 
 
 1.plumber.R dosyası çalıştırılarak Swagger ekranı açılır.
 
