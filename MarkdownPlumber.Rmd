@@ -1,0 +1,120 @@
+---
+title: "Global Terrosim"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    highlight: tango
+    theme: "flatly"
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+    keep_tex: true
+  word_document:
+    toc: yes
+---
+
+```{r message=FALSE, warning=FALSE, echo=FALSE,	include=FALSE }
+### Libraries ####
+require(dplyr)
+require(plumber)
+require(plotly)
+require(gridExtra)
+require(grid)
+require(jsonlite)
+require(ggpubr)
+require(DT)
+### End Region ####
+```
+
+Kullanılan veri setine [buradan](https://www.kaggle.com/START-UMD/gtd) ulaşabilirsiniz.
+
+```{r  message=FALSE, warning=FALSE,echo=FALSE}
+
+globalterorism <- read.csv("C:/Users/elifs/OneDrive/Masaüstü/WORK/GitHub-Çalışmalarım/Markdown_Plumber/globalterrorismdb.csv")
+
+### Turkey Data ####
+turkey_data <- globalterorism %>% filter(country_txt == "Turkey")
+### End Region ####
+```
+
+Global Terrorism Database (GTD), 1970'ten 2017'ye kadar dünyadaki terör saldırıları hakkında bilgi içeren açık kaynaklı bir veritabanıdır. GTD, bu süre zarfında meydana gelen yurtiçi ve uluslararası terör olaylarıyla ilgili sistematik veriler içeriyor ve şu anda 180.000'den fazla saldırı içeriyor. 
+
+## Pie Chart
+```{r message=FALSE, warning=FALSE,echo=FALSE}
+  attack_type_data <- turkey_data %>% select(attacktype1_txt) %>% filter(attacktype1_txt != "Unknown") %>%
+    group_by(attacktype1_txt) %>% summarise(count = n())
+
+  plot <- plot_ly(attack_type_data, labels = ~attacktype1_txt, values = ~count, type = 'pie')
+
+  plot
+```
+
+## Table
+```{r message=FALSE, warning=FALSE,echo=FALSE}
+ attack_type_data <- turkey_data %>% select(attacktype1_txt) %>% filter(attacktype1_txt != "Unknown") %>%
+    group_by(attacktype1_txt) %>% summarise(count = n())
+
+  total_name <- rbind(attack_type_data[ , 1], "Toplam")
+  sum <- addmargins(as.matrix(attack_type_data[-1]),1)
+  attack_type_data <- cbind(total_name,sum)
+
+  attack_type_data <- attack_type_data %>% mutate(Yuzde = round((attack_type_data$count / attack_type_data[length(attack_type_data[,1]),2]),2)*100)
+  attack_type_data$Yuzde <- paste0(attack_type_data$Yuzde, "%")
+
+  colnames(attack_type_data)[colnames(attack_type_data) == "attacktype1_txt"] <- "Saldırı Tipi"
+  colnames(attack_type_data)[colnames(attack_type_data) == "count"] <- "Sayı"
+
+
+  stable.p <- ggtexttable(attack_type_data, rows = NULL,theme = ttheme("mBlue"))
+
+  stable.p
+  
+```
+
+## Dynamic Table
+```{r message=FALSE, warning=FALSE,echo=FALSE}
+ 
+ attack_type_data_table <- turkey_data %>% select(attacktype1_txt,city,latitude,longitude,attacktype1)
+
+  colnames(attack_type_data_table)[colnames(attack_type_data_table) == "attacktype1_txt"] <- "Saldırı Tipi"
+  colnames(attack_type_data_table)[colnames(attack_type_data_table) == "city"] <- "Şehir"
+  colnames(attack_type_data_table)[colnames(attack_type_data_table) == "latitude"] <- "Enlem"
+  colnames(attack_type_data_table)[colnames(attack_type_data_table) == "longitude"] <- "Boylam"
+  colnames(attack_type_data_table)[colnames(attack_type_data_table) == "attacktype1"] <- "Saldırı Sayısı"
+
+
+ tr <- list(
+  sProcessing = "Traitement en cours...", sSearch = "Arama&nbsp;:", 
+  sLengthMenu = "Liste _MENU_ ", 
+  sInfo = "  _TOTAL_ veriden _START_- _END_ arasını listeler. ", 
+  sInfoFiltered = " - filtering from _MAX_ records", 
+
+  
+  
+  oPaginate = list(
+    sFirst = " ", sPrevious = "Önceki", 
+    sNext = "Sonraki", sLast = "Dernier"
+  ), 
+  oAria = list(
+    sSortAscending = ":Artan", 
+    sSortDescending = ":Azalan"
+  )
+ )
+
+ 
+datatable <- datatable(attack_type_data_table, filter = 'top',
+          callback=JS('$(\'div.has-feedback input[type="search"]\').attr( "placeholder", "Seç" )'),
+          options = list( language = tr ,  scrollX='400px', pageLength = 10, autoWidth =TRUE,
+                           columnDefs = list(list(targets = 1:(ncol(attack_type_data_table))))
+                          )) %>%
+          formatStyle(c('Saldırı Tipi'), backgroundColor  = "#DeF7E9" )
+
+datatable
+
+```
+
