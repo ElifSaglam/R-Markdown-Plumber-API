@@ -24,4 +24,16 @@ III. Api sonucunda yer alan **Request UR**L deki **link** ile browserdan sonucu 
 ![image](https://user-images.githubusercontent.com/61660262/134005123-c5311845-2758-486c-a778-d7b04b54fe40.png)
 
 
-#### 3.
+#### 3. Grafik ve Tablo Bilgisi İçeren **MarkdownPlumber.Rmd** Dosyası
+
+I. plumber.R dosyası çalıştırılarak Swagger ekranı açılır.
+
+![image](https://user-images.githubusercontent.com/61660262/134004410-a2c02f0b-de4c-4e7c-8d80-9a36020cfedb.png)
+
+II. Swagger ekranından ilgili method seçilerek testi yapılır.
+
+![image](https://user-images.githubusercontent.com/61660262/134019149-3f860397-2ce7-413c-8ab4-417439c788f7.png)
+
+III. Api sonucunda yer alan **Request UR**L deki **link** ile browserdan sonucu görüntüleyebilirsiniz.
+
+![image](https://user-images.githubusercontent.com/61660262/134018607-eb76ab2e-d666-422f-83d1-6b4b57942013.png)
