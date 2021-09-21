@@ -1,9 +1,9 @@
-### Markdown-Plumber
+# Markdown-Plumber
 
-#### 1. Küresel Terörizm Veri Tabanı
+## 1. Küresel Terörizm Veri Tabanı
 Global Terrorism Database (GTD), 1970'ten 2017'ye kadar dünyadaki terör saldırıları hakkında bilgi içeren açık kaynaklı bir veritabanıdır. GTD, bu süre zarfında meydana gelen yurtiçi ve uluslararası terör olaylarıyla ilgili sistematik veriler içeriyor ve şu anda 180.000'den fazla saldırı içeriyor. Veri tabanı, merkezi Maryland Üniversitesi'nde bulunan Terörizm ve Terörizme Karşı Tepkiler Ulusal Konsorsiyumu'ndaki (START) araştırmacılar tarafından sürdürülmektedir.
 
-#### 2. Genel Markdown Bilgisi İçeren **R_Markdown.Rmd** Dosyası
+## 2. Genel Markdown Bilgisi İçeren **R_Markdown.Rmd** Dosyası
 
 R_Markdown.Rmd dosyasında hazırlanan metin içerikli raporun api'sini çalıştırmak ve test etmek için gereken adımlar aşağıda yer almaktadır.
 
@@ -24,7 +24,7 @@ III. Api sonucunda yer alan **Request UR**L deki **link** ile browserdan sonucu 
 ![image](https://user-images.githubusercontent.com/61660262/134005123-c5311845-2758-486c-a778-d7b04b54fe40.png)
 
 
-#### 3. Grafik ve Tablo Bilgisi İçeren **MarkdownPlumber.Rmd** Dosyası
+## 3. Grafik ve Tablo Bilgisi İçeren **MarkdownPlumber.Rmd** Dosyası
 
 I. plumber.R dosyası çalıştırılarak Swagger ekranı açılır.
 
